@@ -1,7 +1,7 @@
 {
     "name": "typesafe-templates",
     "version": "0.2.0",
-    "description": "Template engine that leverages JSX to generate JavaScript code from TypeScript code files rather than text templates.",
+    "description": "Template engine for writing compiler-checked templates in TypeScript by leveraging JSX to generate JavaScript code from TypeScript code files rather than text templates.",
     "author": {
         "name": "Matt Strom",
         "email": "support@mattstrom.com"
@@ -14,9 +14,18 @@
         "prebuild:tests": "npm run prebuild",
         "build": "tsc --build src/app",
         "build:tests": "tsc --build src/tests",
-        "test": "dist",
+        "test": "jest",
         "prepublishOnly": "npm run build"
     },
+    "keywords": [
+        "typescript",
+        "tsx",
+        "templates",
+        "template engine",
+        "javascript",
+        "jsx",
+        "tooling"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/mattstrom/typesafe-templates"
@@ -35,8 +44,11 @@
         "@types/babel__core": "^7.0.1",
         "@types/babel__parser": "^7.0.0",
         "@types/babel__traverse": "^7.0.0",
+        "@types/jest": "^23.3.9",
         "@types/node": "^10.12.0",
+        "jest": "^23.6.0",
         "rimraf": "^2.6.2",
+        "ts-jest": "^23.10.4",
         "tslint": "^5.11.0",
         "typescript": "^3.1.3"
     }
