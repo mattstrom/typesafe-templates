@@ -13,6 +13,6 @@ export function $boolean(props: { value: boolean; }): boolean {
 }
 
 export const handleBooleanElement: Handler = (path: NodePath<JSXElement>, state: any) => {
-	const value = getDataValueForAttribute(path, 'name');
+	const value = getDataValueForAttribute(path, 'value');
 	path.replaceWith(booleanLiteral(value));
 };
