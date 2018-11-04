@@ -15,13 +15,13 @@ interface Message {
 }
 
 (function() {
-    <$repeat items="messages">
+    <$repeat items={$.messages}>
         {($: Message) => {
-            <$if test="$.lang === 'en'">
-                console.log('Good morning' + <$string value="name" />);
+            <$if test={$.lang === 'en'}>
+                console.log('Good morning' + <$string value={$.name} />);
             </$if>;
-        	<$if test="$.lang === 'es'">
-                console.log('Bueño dias' + <$string value="name" />);
+        	<$if test={$.lang === 'es'}>
+                console.log('Bueño dias' + <$string value={$.name} />);
             </$if>;
         }}
     </$repeat>
