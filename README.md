@@ -46,6 +46,8 @@ async function main() {
     const { code } = await renderFile('./template.tsx', data);
     console.log(code);
 }
+
+main();
 ```
 
 Output
@@ -130,7 +132,7 @@ Example:
 ```typescript jsx
 function print(str: string, num: number, bool: boolean) {}
 
-print(<$string />, <$string />, <$string />); // Will not report type error
+print(<$string />, <$string />, <$string />); // Will not report type errors
 
-print(<$string /> as string, <$string /> as string, <$string /> as string); // Will not report type error
+print(<$string /> as string, <$string /> as string, <$string /> as string); // Will report type errors
 ```
