@@ -21,10 +21,10 @@ jobs:
     - persist_to_workspace:
         root: ~/repo
         paths: .
+
   publish:
     docker:
     - image: circleci/node:10.12.0
-    requires: build
     steps:
     - attach_workspace:
         at: ~/repo
@@ -37,6 +37,8 @@ workflows:
     jobs:
     - build
     - publish:
+        requires:
+          - build
         filters:
           tags:
             only: /v[0-9]+(\.[0-9]+)*/
