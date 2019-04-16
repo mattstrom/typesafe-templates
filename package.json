@@ -15,7 +15,9 @@
         "build": "tsc --build src/app",
         "build:tests": "tsc --build src/tests",
         "test": "jest",
-        "prepublishOnly": "npm run build"
+        "prepublishOnly": "npm run build",
+        "release": "semantic-release --no-ci",
+        "release:dry-run": "semantic-release --no-ci --dry-run"
     },
     "keywords": [
         "typescript",
@@ -43,13 +45,24 @@
         "babel-literal-to-ast": "^2.1.0"
     },
     "devDependencies": {
+        "@commitlint/cli": "^7.5.2",
+        "@commitlint/config-conventional": "^7.5.0",
+        "@semantic-release/changelog": "^3.0.2",
+        "@semantic-release/commit-analyzer": "^6.1.0",
+        "@semantic-release/git": "^7.0.8",
+        "@semantic-release/release-notes-generator": "^7.1.4",
+        "@types/babel-types": "^7.0.4",
         "@types/babel__core": "^7.0.1",
         "@types/babel__parser": "^7.0.0",
         "@types/babel__traverse": "^7.0.0",
         "@types/jest": "^23.3.9",
         "@types/node": "^10.12.0",
+        "commitizen": "^3.0.7",
+        "cz-conventional-changelog": "^2.1.0",
+        "husky": "^1.3.1",
         "jest": "^23.6.0",
         "rimraf": "^2.6.2",
+        "semantic-release": "^15.13.3",
         "ts-jest": "^23.10.4",
         "tslint": "^5.11.0",
         "typescript": "^3.1.3"

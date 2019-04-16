@@ -6,3 +6,4 @@ node_modules
 
 *.js
 !jest.config.js
+!release.config.js
