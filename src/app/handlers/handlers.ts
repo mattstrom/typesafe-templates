@@ -5,6 +5,7 @@ import { handleBooleanElement } from './boolean';
 import { handleExprElement } from './expr';
 import { handleIfElement } from './if';
 import { handleNumberElement } from './number';
+import { handleObjectElement } from './object';
 import { handleRepeatElement } from './repeat';
 import { handleStringElement } from './string';
 
@@ -16,6 +17,7 @@ export const handlers = new Map<string, Handler>([
 	['$expr', handleExprElement],
 	['$if', handleIfElement],
 	['$number', handleNumberElement],
+	['$object', handleObjectElement],
 	['$repeat', handleRepeatElement],
 	['$string', handleStringElement]
 ]);
