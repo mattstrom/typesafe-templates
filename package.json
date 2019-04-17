@@ -50,6 +50,7 @@
         "@semantic-release/changelog": "^3.0.2",
         "@semantic-release/commit-analyzer": "^6.1.0",
         "@semantic-release/git": "^7.0.8",
+        "@semantic-release/github": "^5.2.10",
         "@semantic-release/release-notes-generator": "^7.1.4",
         "@types/babel-types": "^7.0.4",
         "@types/babel__core": "^7.0.1",
