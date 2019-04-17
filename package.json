@@ -16,8 +16,20 @@
         "build:tests": "tsc --build src/tests",
         "test": "jest",
         "prepublishOnly": "npm run build",
+        "commit": "git-cz",
         "release": "semantic-release --no-ci",
         "release:dry-run": "semantic-release --no-ci --dry-run"
+    },
+    "config": {
+      "commitizen": {
+        "path": "./node_modules/cz-conventional-changelog"
+      }
+    },
+    "husky": {
+      "hooks": {
+        "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+        "pre-commit": "npm test"
+      }
     },
     "keywords": [
         "typescript",
