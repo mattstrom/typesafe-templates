@@ -33,7 +33,10 @@ workflows:
   version: 2
   build_and_release:
     jobs:
-    - build
+    - build:
+        filters:
+          tags:
+            ignore: /^\d+\.\d+\.\d+/
     - release:
         requires:
           - build
