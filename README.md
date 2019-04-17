@@ -4,7 +4,7 @@ Template engine for writing compiler-checked templates in TypeScript by leveragi
 TypeScript code files rather than text templates.
 
 Under the hood, `typesafe-templates` uses Babel to build an AST, which is then traversed to find and replace JSX nodes.
-Such a tool can be useful for pre-generating customized Javascript files that vary by user or for creatihg HTML templates using
+Such a tool can be useful for pre-generating customized Javascript files that vary by user or for creating HTML templates using
 JSX rather than a syntax like Pug (some limitations apply). 
 
 ### Example
@@ -22,7 +22,7 @@ interface Message {
                 console.log('Good morning' + <$string value={$.name} />);
             </$if>;
         	<$if test={$.lang === 'es'}>
-                console.log('Bueño dias' + <$string value={$.name} />);
+                console.log('Bueños dias' + <$string value={$.name} />);
             </$if>;
         }}
     </$repeat>
@@ -55,8 +55,8 @@ Output
 (function() {
     console.log('Good morning, Alice');
     console.log('Good morning, Bob');
-    console.log('Bueño dias, Dora');
-    console.log('Bueño dias, Diego');
+    console.log('Bueños dias, Dora');
+    console.log('Bueños dias, Diego');
 })();
 ```
 
@@ -69,7 +69,7 @@ npm install typesafe-templates
 > Use the `--save-dev` flag if you will be generating templates as part of a development task.
 
 ### Usage
-To work properly you will need to include a type definition for JSX elements that assign `JSX.Element`
+To work properly you will need to include a type definition for JSX elements that assigns `JSX.Element`
 to `any`.
 
 ```typescript jsx
@@ -80,13 +80,13 @@ declare namespace JSX {
 
 As a convenience, the `$` symbol is used to represent a parent type of a scope. However,
 any name can be used. Presently the library does not support deep properties. A reference like
-`$.level1.level2.level3` may type check correctly, but the proper value will not be injected into
+`$.level1.level2.level3` may type-check correctly, but the proper value will not be injected into
 the template.
 
 ### Elements
 
 #### Control Elements
-Control elements are similiar to JavaScript control blocks. They wrap a block of code and control
+Control elements are similar to JavaScript control blocks. They wrap a block of code and control
 its output into the rendered code. In JSX terms, they require `props.children` to be defined.
 
 Because JSX is used here as substitute JavaScript expressions, you will often need to include
