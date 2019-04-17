@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/mattstrom/typesafe-templates/compare/0.3.0...0.4.0) (2019-04-17)
+
+
+### Features
+
+* add $any and $array tags ([2bf6ba1](https://github.com/mattstrom/typesafe-templates/commit/2bf6ba1)), closes [#5](https://github.com/mattstrom/typesafe-templates/issues/5)
+
 # [0.3.0](https://github.com/mattstrom/typesafe-templates/compare/0.2.4...0.3.0) (2019-04-16)
 
 
