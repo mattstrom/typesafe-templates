@@ -25,7 +25,7 @@ export async function render(
 
 	const opts: TypesafeTemplateOptions = {
 		...defaultOptions,
-		data: data
+		data
 	};
 
 	return await babel.transformAsync(template, {

@@ -27,9 +27,9 @@ declare const $: Campus;
 								schedule.include();
 							}}
 						</$if>;
-					}}</$repeat>
+					}}</$repeat>;
 				}
-			)
+			);
 		}}
-	</$repeat>
+	</$repeat>;
 })();
