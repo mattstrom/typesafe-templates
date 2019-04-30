@@ -1,3 +1,10 @@
+# [0.5.0](https://github.com/mattstrom/typesafe-templates/compare/0.4.0...0.5.0) (2019-04-30)
+
+
+### Features
+
+* enhance error messages ([5f512ba](https://github.com/mattstrom/typesafe-templates/commit/5f512ba)), closes [#10](https://github.com/mattstrom/typesafe-templates/issues/10)
+
 # [0.4.0](https://github.com/mattstrom/typesafe-templates/compare/0.3.0...0.4.0) (2019-04-17)
 
 
