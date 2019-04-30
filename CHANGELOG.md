@@ -1,3 +1,10 @@
+# [0.6.0](https://github.com/mattstrom/typesafe-templates/compare/0.5.0...0.6.0) (2019-04-30)
+
+
+### Features
+
+* add $nullable tag ([e3a8a85](https://github.com/mattstrom/typesafe-templates/commit/e3a8a85)), closes [#12](https://github.com/mattstrom/typesafe-templates/issues/12)
+
 # [0.5.0](https://github.com/mattstrom/typesafe-templates/compare/0.4.0...0.5.0) (2019-04-30)
 
 
