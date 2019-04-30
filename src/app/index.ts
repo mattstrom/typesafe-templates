@@ -13,6 +13,7 @@ export {
 	$boolean,
 	$expr,
 	$if,
+	$nullable,
 	$number,
 	$object,
 	$repeat,
