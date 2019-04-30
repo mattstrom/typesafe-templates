@@ -2,6 +2,7 @@ import * as babel from '@babel/core';
 import { NodePath } from '@babel/traverse';
 import { ImportDeclaration, JSXElement, Program } from '@babel/types';
 
+import { UnexpectedType } from '../errors';
 import { Handler, handlers } from '../handlers';
 import { getJSXElementName } from '../helpers';
 
@@ -35,10 +36,18 @@ export function TypesafeTemplatePlugin(context: typeof babel) {
 				return;
 			}
 
-			const handler = handlers.get(name) as Handler;
-			handler(path, state);
+			try {
+				const handler = handlers.get(name) as Handler;
+				handler(path, state);
 
-			return;
+				return;
+			} catch (e) {
+				if (e instanceof TypeError) {
+					throw new UnexpectedType(path, e);
+				}
+
+				throw e;
+			}
 		}
 	};
 
