@@ -21,15 +21,15 @@
         "release:dry-run": "semantic-release --no-ci --dry-run"
     },
     "config": {
-      "commitizen": {
-        "path": "./node_modules/cz-conventional-changelog"
-      }
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
     },
     "husky": {
-      "hooks": {
-        "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-        "pre-commit": "npm test"
-      }
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+            "pre-commit": "npm test"
+        }
     },
     "keywords": [
         "typescript",
