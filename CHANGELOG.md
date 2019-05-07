@@ -1,3 +1,11 @@
+## [0.7.1](https://github.com/mattstrom/typesafe-templates/compare/0.7.0...0.7.1) (2019-05-07)
+
+
+### Bug Fixes
+
+* add typescript preset to render method ([53b3fd8](https://github.com/mattstrom/typesafe-templates/commit/53b3fd8))
+* add typescript preset to render method ([c46f1b6](https://github.com/mattstrom/typesafe-templates/commit/c46f1b6))
+
 # [0.7.0](https://github.com/mattstrom/typesafe-templates/compare/0.6.0...0.7.0) (2019-05-07)
 
 

@@ -1,6 +1,6 @@
 {
     "name": "typesafe-templates",
-    "version": "0.7.0",
+    "version": "0.7.1",
     "description": "Template engine for writing compiler-checked templates in TypeScript by leveraging JSX to generate JavaScript code from TypeScript code files rather than text templates.",
     "author": {
         "name": "Matt Strom",
