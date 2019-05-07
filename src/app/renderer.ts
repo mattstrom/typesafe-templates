@@ -36,6 +36,7 @@ export async function renderFromAst(ast: Node, data: any, options: Partial<Trans
 	};
 
 	return await babel.transformFromAstSync(ast!, undefined, {
+		filename: 'template.tsx', // Arbitrary filename. Used by Babel to discern syntax of `contents`.
 		presets: [
 			PresetTypescript
 		],
