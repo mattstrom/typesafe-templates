@@ -1,3 +1,10 @@
+# [0.7.0](https://github.com/mattstrom/typesafe-templates/compare/0.6.0...0.7.0) (2019-05-07)
+
+
+### Features
+
+* add support for rendering from precompiled ast ([b232f0e](https://github.com/mattstrom/typesafe-templates/commit/b232f0e)), closes [#14](https://github.com/mattstrom/typesafe-templates/issues/14)
+
 # [0.6.0](https://github.com/mattstrom/typesafe-templates/compare/0.5.0...0.6.0) (2019-04-30)
 
 
