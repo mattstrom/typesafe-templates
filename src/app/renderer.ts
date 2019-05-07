@@ -1,6 +1,8 @@
 import * as babel from '@babel/core';
+import { BabelFileResult, Node } from '@babel/core';
 import PluginJsxSyntax from '@babel/plugin-syntax-jsx';
 import PresetTypescript from '@babel/preset-typescript';
+import { File, Program } from '@babel/types';
 
 import { TypesafeTemplateOptions, TypesafeTemplatePlugin } from './plugins';
 
@@ -12,6 +14,34 @@ export interface TransformerOptions {
 const defaultOptions: TransformerOptions = {
 	plugins: []
 };
+
+export async function getAst(code: string): Promise<File | Program | null> {
+	return await babel.parseAsync(code, {
+		ast: true,
+		filename: 'template.tsx', // Arbitrary filename. Used by Babel to discern syntax of `contents`.
+		presets: [PresetTypescript],
+		plugins: [PluginJsxSyntax]
+	});
+}
+
+export async function renderFromAst(ast: Node, data: any, options: Partial<TransformerOptions> = {}): Promise<BabelFileResult> {
+	const _options = {
+		...defaultOptions,
+		...options
+	};
+
+	const opts: TypesafeTemplateOptions = {
+		...defaultOptions,
+		data
+	};
+
+	return await babel.transformFromAstSync(ast!, undefined, {
+		plugins: [
+			[TypesafeTemplatePlugin, opts],
+			..._options.plugins
+		]
+	})!;
+}
 
 export async function render(
 	template: string,
@@ -54,7 +84,7 @@ export async function renderFile(
 
 	const opts: TypesafeTemplateOptions = {
 		...defaultOptions,
-		data: data
+		data
 	};
 
 	return await babel.transformFileAsync(fileName, {
