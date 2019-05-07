@@ -36,6 +36,9 @@ export async function renderFromAst(ast: Node, data: any, options: Partial<Trans
 	};
 
 	return await babel.transformFromAstSync(ast!, undefined, {
+		presets: [
+			PresetTypescript
+		],
 		plugins: [
 			[TypesafeTemplatePlugin, opts],
 			..._options.plugins
