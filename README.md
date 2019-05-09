@@ -9,7 +9,7 @@ JSX rather than a syntax like Pug (some limitations apply).
 
 ### Example
 _template.tsx_
-```typescript jsx
+```
 interface Message {
     name: string;
     lang: 'en' | 'es';
@@ -30,7 +30,7 @@ interface Message {
 ```
 
 _script.ts_
-```typescript jsx
+```
 import { renderFile } from 'typesafe-templates';
 
 async function main() {
@@ -51,7 +51,7 @@ main();
 ```
 
 Output
-```javascript
+```
 (function() {
     console.log('Good morning, Alice');
     console.log('Good morning, Bob');
@@ -62,7 +62,7 @@ Output
 
 ### Installation
 
-```bash
+```
 npm install typesafe-templates
 ```
 
@@ -72,7 +72,7 @@ npm install typesafe-templates
 To work properly you will need to include a type definition for JSX elements that assigns `JSX.Element`
 to `any`.
 
-```typescript jsx
+```
 declare namespace JSX {
     type Element = any;
 }
@@ -102,7 +102,7 @@ The `$repeat` element expects the `children` prop to be a function or arrow func
 surrounding function will be removed in the final output.
 
 Example:
-```typescript jsx
+```
 <$repeat items={$.messages}>
     {($: Message) => {
     	console.log(<$string value={$.name}>)
@@ -129,7 +129,7 @@ elements, when used as values, are treated as `any` and will not show type error
 typecast the element. Refactoring signatures, however, will work when using TS tooling to rearrange arguments. 
 
 Example:
-```typescript jsx
+```
 function print(str: string, num: number, bool: boolean) {}
 
 print(<$string />, <$string />, <$string />); // Will not report type errors
