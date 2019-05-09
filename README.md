@@ -1,3 +1,6 @@
+[![CircleCI](https://circleci.com/gh/mattstrom/typesafe-templates.svg?style=svg)](https://circleci.com/gh/mattstrom/typesafe-templates)
+[![npm version](https://badge.fury.io/js/typesafe-templates.svg)](https://badge.fury.io/js/typesafe-templates)
+
 typesafe-templates
 ====================
 Template engine for writing compiler-checked templates in TypeScript by leveraging JSX to generate JavaScript code from 
