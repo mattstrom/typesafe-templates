@@ -11,6 +11,8 @@ export {
 	$any,
 	$array,
 	$boolean,
+	$decode,
+	$encode,
 	$expr,
 	$if,
 	$nullable,
