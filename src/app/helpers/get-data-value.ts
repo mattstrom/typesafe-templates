@@ -28,10 +28,7 @@ export function getDataValue(path: NodePath | null): any {
 			: node.property;
 
 		return $data[key];
-	} else if (path.isStringLiteral()) {
-		const key = path.node.value;
-		return $data[key];
-	} else if (path.isBooleanLiteral() || path.isNumberLiteral()) {
+	} else if (path.isStringLiteral() || path.isBooleanLiteral() || path.isNumberLiteral()) {
 		return path.node.value;
 	} else {
 		throw new NodeTypeNotSupportedError(path.node, getDataValue.name);
