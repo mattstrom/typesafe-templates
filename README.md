@@ -1,8 +1,9 @@
-[![CircleCI](https://circleci.com/gh/mattstrom/typesafe-templates.svg?style=svg)](https://circleci.com/gh/mattstrom/typesafe-templates)
-[![npm version](https://badge.fury.io/js/typesafe-templates.svg)](https://badge.fury.io/js/typesafe-templates)
-
 typesafe-templates
 ====================
+[![CircleCI](https://circleci.com/gh/mattstrom/typesafe-templates.svg?style=svg)](https://circleci.com/gh/mattstrom/typesafe-templates)
+[![npm version](https://img.shields.io/npm/v/typesafe-templates/latest.svg)](https://www.npmjs.com/package/typesafe-templates)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+
 Template engine for writing compiler-checked templates in TypeScript by leveraging JSX to generate JavaScript code from 
 TypeScript code files rather than text templates.
 
@@ -127,7 +128,7 @@ Outputs a numeric literal.
 Outputs a string literal.
 
 ### Limitations
-Currently TypeScript treats all JSX elements as the same type (which can changed but only to one collective type). Therefore
+Currently TypeScript treats all JSX elements as the same type (which can be changed but only to one collective type). Therefore
 elements, when used as values, are treated as `any` and will not show type errors unless you manually
 typecast the element. Refactoring signatures, however, will work when using TS tooling to rearrange arguments. 
 
