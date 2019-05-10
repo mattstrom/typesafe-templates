@@ -1,3 +1,16 @@
+# [1.0.0](https://github.com/mattstrom/typesafe-templates/compare/0.7.1...1.0.0) (2019-05-10)
+
+
+### Features
+
+* add support for encoding and decoding values ([584d440](https://github.com/mattstrom/typesafe-templates/commit/584d440)), closes [#23](https://github.com/mattstrom/typesafe-templates/issues/23)
+* modify string attribute to be treated as string ([7cc8e64](https://github.com/mattstrom/typesafe-templates/commit/7cc8e64)), closes [#23](https://github.com/mattstrom/typesafe-templates/issues/23)
+
+
+### BREAKING CHANGES
+
+* string-valued attributes now resolve to the string itself
+
 ## [0.7.1](https://github.com/mattstrom/typesafe-templates/compare/0.7.0...0.7.1) (2019-05-07)
 
 
