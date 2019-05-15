@@ -16,7 +16,7 @@ export const enum Encoding {
 /**
  *  Noop function to provide type definition for JSX element.
  */
-export function $encode<T extends JSXElement>(props: { type: Encoding; children: T }): T | null | undefined {
+export function $encode<T extends JSXElement>(props: { type: Encoding; children?: T }): T | null | undefined {
 	return null;
 }
 
