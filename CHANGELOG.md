@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/mattstrom/typesafe-templates/compare/1.0.0...1.1.0) (2019-05-15)
+
+
+### Bug Fixes
+
+* address 'property children is missing' compiler error ([1b314de](https://github.com/mattstrom/typesafe-templates/commit/1b314de)), closes [#26](https://github.com/mattstrom/typesafe-templates/issues/26)
+
+
+### Features
+
+* add support for expressions in $decode and $encode ([5d2b661](https://github.com/mattstrom/typesafe-templates/commit/5d2b661)), closes [#25](https://github.com/mattstrom/typesafe-templates/issues/25)
+
 # [1.0.0](https://github.com/mattstrom/typesafe-templates/compare/0.7.1...1.0.0) (2019-05-10)
 
 
