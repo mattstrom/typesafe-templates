@@ -1,10 +1,11 @@
 import { NodePath } from '@babel/traverse';
 import { isJSXElement, JSXElement } from '@babel/types';
 import astify from 'babel-literal-to-ast';
+import btoa from 'btoa';
 
 import { getDataValueForAttribute } from '../helpers';
+import { isExprElement } from './expr';
 import { Handler } from './handlers';
-import btoa from 'btoa';
 
 
 export const enum Encoding {
@@ -33,8 +34,10 @@ export const handleEncodeElement: Handler = (path: NodePath<JSXElement>, state: 
 		throw new Error('Child of $encode must be a JSX element');
 	}
 
+	const isExpr = isExprElement(child);
+
 	const type = getDataValueForAttribute(path, 'type');
-	const value = getDataValueForAttribute(child, 'value');
+	const value = getDataValueForAttribute(child, isExpr ? 'code' : 'value');
 
 	let encoded;
 

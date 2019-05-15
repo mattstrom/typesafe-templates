@@ -62,4 +62,24 @@ describe('$unescape', () => {
 			expect(code).toEqual(`const uri = "%2Fpath%2Fsegment";`);
 		});
 	});
+
+	fdescribe(`when child is an expression`, () => {
+		const template = `
+			const expr = <$encode type="base64"><$expr code={$.a} /></$encode>;
+		`;
+
+		it('should encode expression and insert into template', async () => {
+			// Arrange
+			const data = { a: /^www\.github\.io$/ };
+
+			// Act
+			const result = await render(template, data);
+			const code = result && result.code;
+
+			// Assert
+			expect(result).not.toBeNull();
+			expect(code).not.toBeNull();
+			expect(code).toEqual(`const expr = "L153d3dcLmdpdGh1YlwuaW8kLw==";`);
+		});
+	});
 });
