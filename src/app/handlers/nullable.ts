@@ -8,7 +8,7 @@ import { Handler } from './handlers';
 /**
  *  Noop function to provide type definition for JSX element.
  */
-export function $nullable<T>(props: { children: T }): T | null | undefined {
+export function $nullable<T>(props: { children?: T }): T | null | undefined {
 	return null;
 }
 
