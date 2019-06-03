@@ -1,7 +1,7 @@
 import { NodePath } from '@babel/traverse';
 import { JSXElement } from '@babel/types';
 
-import { getNodePath } from '../../tests/node-path.helper';
+import { getNodePath } from '../test-utils/node-path.helper';
 import { InvalidChildNode } from '../errors';
 import { resolveControlFlowTag } from './resolve-control-flow-tag';
 
