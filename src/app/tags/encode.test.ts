@@ -1,7 +1,7 @@
 import { render } from '../renderer';
 
 
-describe('$unescape', () => {
+describe('$encode', () => {
 
 	describe('when type is base64', () => {
 		const template = `
@@ -63,7 +63,7 @@ describe('$unescape', () => {
 		});
 	});
 
-	fdescribe(`when child is an expression`, () => {
+	describe(`when child is an expression`, () => {
 		const template = `
 			const expr = <$encode type="base64"><$expr code={$.a} /></$encode>;
 		`;
