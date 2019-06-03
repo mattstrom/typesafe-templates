@@ -11,4 +11,4 @@ export * from './object';
 export * from './repeat';
 export * from './string';
 
-export * from './handlers';
+export * from './tags';

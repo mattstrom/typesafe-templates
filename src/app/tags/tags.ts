@@ -17,7 +17,7 @@ import { handleStringElement } from './string';
 
 export type Handler = (path: NodePath<JSXElement>, state: any) => void;
 
-export const handlers = new Map<string, Handler>([
+export const tags = new Map<string, Handler>([
 	['$any', handleAnyElement],
 	['$array', handleArrayElement],
 	['$boolean', handleBooleanElement],

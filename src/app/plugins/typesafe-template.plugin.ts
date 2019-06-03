@@ -3,7 +3,7 @@ import { NodePath } from '@babel/traverse';
 import { ImportDeclaration, JSXElement, Program } from '@babel/types';
 
 import { UnexpectedType } from '../errors';
-import { Handler, handlers } from '../handlers';
+import { Handler, tags } from '../tags';
 import { getJSXElementName } from '../helpers';
 
 
@@ -32,12 +32,12 @@ export function TypesafeTemplatePlugin(context: typeof babel) {
 		JSXElement(path: NodePath<JSXElement>, state: State) {
 			const name = getJSXElementName(path);
 
-			if (!handlers.has(name)) {
+			if (!tags.has(name)) {
 				return;
 			}
 
 			try {
-				const handler = handlers.get(name) as Handler;
+				const handler = tags.get(name) as Handler;
 				handler(path, state);
 
 				return;
