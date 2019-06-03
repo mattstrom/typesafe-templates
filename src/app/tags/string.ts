@@ -1,7 +1,5 @@
 import { NodePath } from '@babel/traverse';
-import { JSXElement, stringLiteral } from '@babel/types';
-
-import { getDataValueForAttribute, getJSXElementName } from '../helpers';
+import { getJSXElementName } from '../helpers';
 
 
 /**
@@ -14,9 +12,4 @@ export function $string(props: { value: string; }): string {
 export function isStringElement(node: NodePath) {
 	const name = getJSXElementName(node);
 	return (name === '$string');
-}
-
-export function handleStringElement(path: NodePath<JSXElement>, state: any) {
-	const value = getDataValueForAttribute(path, 'value');
-	path.replaceWith(stringLiteral(value));
 }

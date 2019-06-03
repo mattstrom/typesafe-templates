@@ -1,16 +1,9 @@
 import { NodePath } from '@babel/traverse';
 import { JSXElement } from '@babel/types';
 
-import { evaluateJSXAttribute, getDataForScope, resolveControlFlowTag } from '../helpers';
-import { Handler } from './tags';
+import { evaluateJSXAttribute, getDataForScope, resolveControlFlowTag } from '../../helpers';
+import { Handler } from '..';
 
-
-/**
- *  Noop function to provides type definition for JSX element.
- */
-export function $if(props: { test: any }): boolean {
-	return true;
-}
 
 export const handleIfElement: Handler = (path: NodePath<JSXElement>, state: any) => {
 	const $data = getDataForScope(path, '$data');

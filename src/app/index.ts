@@ -2,9 +2,10 @@
 
 export * from './errors';
 export * from './plugins';
+export * from './precompile';
 export * from './renderer';
 
-import { TypesafeTemplatePlugin } from './plugins';
+import { TypesafeTemplatePlugin, TypesafeTemplateEjsPlugin } from './plugins';
 export { TypesafeTemplatePlugin as default };
 
 export {
