@@ -5,7 +5,7 @@ export * from './plugins';
 export * from './precompile';
 export * from './renderer';
 
-import { TypesafeTemplatePlugin, TypesafeTemplateEjsPlugin } from './plugins';
+import { TypesafeTemplatePlugin } from './plugins';
 export { TypesafeTemplatePlugin as default };
 
 export {
