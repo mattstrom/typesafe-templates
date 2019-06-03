@@ -5,7 +5,7 @@ import {
 } from '@babel/types';
 import { evaluateJSXAttribute, getDataForScope } from '../helpers';
 
-import { Handler } from './handlers';
+import { Handler } from './tags';
 
 
 /**
