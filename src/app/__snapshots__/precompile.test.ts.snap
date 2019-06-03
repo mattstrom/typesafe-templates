@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`precompile() with EJS should output rendered EJS 1`] = `
+"/// <reference path=\\"./models.d.ts\\" />
+(function() {
+  scheduler.plan(
+    () => time.getHour() >= 9 && time.getHour() <= 17,
+    schedule => {
+      schedule.reserve(\\"100\\", 200);
+      schedule.assign(\\"201\\", \\"Allison\\");
+      schedule.assign(\\"202\\", \\"Bob\\");
+    }
+  );
+  scheduler.plan(
+    () => time.getHour() >= 7 && time.getHour() <= 23,
+    schedule => {
+      schedule.reserve(\\"1\\", 75);
+      schedule.assign(\\"2\\", \\"Charlie\\");
+      schedule.assign(\\"3\\", \\"Denise\\");
+      schedule.include();
+    }
+  );
+})();
+"
+`;

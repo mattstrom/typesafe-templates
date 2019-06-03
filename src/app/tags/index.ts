@@ -11,4 +11,22 @@ export * from './object';
 export * from './repeat';
 export * from './string';
 
-export * from './tags';
+export type ControlFlowTag
+	= '$if'
+	| '$repeat';
+
+export type ConverterTag
+	= '$decode'
+	| '$encode'
+	| '$nullable';
+
+export type InjectionTag
+	= '$any'
+	| '$array'
+	| '$boolean'
+	| '$expr'
+	| '$number'
+	| '$object'
+	| '$string';
+
+export type TagName = ControlFlowTag | ConverterTag | InjectionTag;

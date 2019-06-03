@@ -1,14 +1,17 @@
 import { types } from '@babel/core';
-import { NodePath } from '@babel/traverse';
+import { Node, NodePath } from '@babel/traverse';
 import { JSXAttribute, JSXElement } from '@babel/types';
 
 import { NonexistentAttribute } from '../errors';
 import { evaluateExpression } from './evaluate-expression';
-import { getDataValue } from './get-data-value';
+import { getDataValue, getRefValue } from './get-data-value';
 
 
-export function getJSXElementName(node: NodePath<any>) {
-	return node.node.openingElement.name.name;
+export function getJSXElementName(node: NodePath<any> | Node) {
+	return (node instanceof NodePath)
+		? node.node.openingElement.name.name
+		// @ts-ignore
+		: (node as Node).openingElement.name.name;
 }
 
 export function getJSXAttribute(path: NodePath<JSXElement>, name: string): NodePath<JSXAttribute> {
@@ -38,6 +41,11 @@ export function getJSXAttribute(path: NodePath<JSXElement>, name: string): NodeP
 export function getDataValueForAttribute(path: NodePath<JSXElement>, name: string) {
 	const attr = getJSXAttribute(path, name);
 	return getDataValue(attr.get('value') as NodePath);
+}
+
+export function getRefValueForAttribute(path: NodePath<JSXElement>, name: string) {
+	const attr = getJSXAttribute(path, name);
+	return getRefValue(attr.get('value') as NodePath);
 }
 
 export function evaluateJSXAttribute(path: NodePath<JSXElement>, name: string): any {
