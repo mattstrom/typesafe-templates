@@ -2,7 +2,7 @@ import { traverse } from '@babel/core';
 import { NodePath } from '@babel/traverse';
 import { isProgram, Node } from '@babel/types';
 
-import { getAst } from '../app';
+import { getAst } from '../index';
 
 type TypedNodePath<T> =
 	T extends Array<Node | null | undefined> ? Array<NodePath<T[number]>> :
