@@ -2,7 +2,7 @@ import { NodePath } from '@babel/traverse';
 import { identifier, isJSXElement, JSXElement, nullLiteral } from '@babel/types';
 
 import { getDataValueForAttribute } from '../helpers';
-import { Handler } from './handlers';
+import { Handler } from './tags';
 
 
 /**

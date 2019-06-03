@@ -20,4 +20,4 @@ export {
 	$object,
 	$repeat,
 	$string
-} from './handlers';
+} from './tags';
