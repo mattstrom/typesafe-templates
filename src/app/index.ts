@@ -2,6 +2,7 @@
 
 export * from './errors';
 export * from './plugins';
+export * from './precompile';
 export * from './renderer';
 
 import { TypesafeTemplatePlugin } from './plugins';
@@ -20,4 +21,4 @@ export {
 	$object,
 	$repeat,
 	$string
-} from './handlers';
+} from './tags';

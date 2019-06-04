@@ -1,16 +1,9 @@
 import { NodePath } from '@babel/traverse';
 import { identifier, isJSXElement, JSXElement, nullLiteral } from '@babel/types';
 
-import { getDataValueForAttribute } from '../helpers';
-import { Handler } from './handlers';
+import { getDataValueForAttribute } from '../../helpers';
+import { Handler } from '..';
 
-
-/**
- *  Noop function to provide type definition for JSX element.
- */
-export function $nullable<T>(props: { children?: T }): T | null | undefined {
-	return null;
-}
 
 export const handleNullableElement: Handler = (path: NodePath<JSXElement>, state: any) => {
 	const { children } = path.node;

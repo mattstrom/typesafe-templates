@@ -6,24 +6,23 @@ declare const $: Campus;
 
 (function() {
 	<$repeat items={$.buildings}>
-		{($: Building) => {
+		{(building: Building) => {
 			scheduler.plan(
-				() => <$expr code={$.isOpen} />,
+				() => <$expr code={building.isOpen} />,
 				(schedule: Schedule) => {
-					<$repeat items={$.rooms}>
-						{($: Room) => {
-						<$if test={$.type === 'conference'}>
-							{($: ConferenceRoom) => {
-								schedule.reserve(<$string value={$.number} />, <$number value={$.size} />);
+					<$repeat items={building.rooms}>{(room: Room) => {
+						<$if test={room.type === 'conference'}>
+							{(room: ConferenceRoom) => {
+								schedule.reserve(<$string value={room.number} />, <$number value={(room).size} />);
 							}}
 						</$if>;
-						<$if test={$.type === 'office'}>
-							{($: Office) => {
-								schedule.assign(<$string value={$.number}/>, <$string value={$.person}/>);
+						<$if test={room.type === 'office'}>
+							{(room: Office) => {
+								schedule.assign(<$string value={room.number}/>, <$string value={room.person}/>);
 							}}
 						</$if>;
-						<$if test={$.type === 'closet'}>
-							{($: Closet) => {
+						<$if test={room.type === 'closet'}>
+							{(room: Closet) => {
 								schedule.include();
 							}}
 						</$if>;

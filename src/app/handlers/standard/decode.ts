@@ -1,21 +1,13 @@
 import { parse } from '@babel/parser';
 import { NodePath } from '@babel/traverse';
 import { isJSXElement, JSXElement } from '@babel/types';
-import atob from 'atob';
 import astify from 'babel-literal-to-ast';
 
-import { getDataValueForAttribute } from '../helpers';
-import { Encoding } from './encode';
-import { isExprElement } from './expr';
-import { Handler } from './handlers';
+import { InvalidEncodingType } from '../../errors';
+import { decode, getDataValueForAttribute } from '../../helpers';
+import { isExprElement } from '../../tags';
+import { Handler } from '..';
 
-
-/**
- *  Noop function to provide type definition for JSX element.
- */
-export function $decode<T extends JSXElement>(props: { type: Encoding; children?: T }): T | null | undefined {
-	return null;
-}
 
 export const handleDecodeElement: Handler = (path: NodePath<JSXElement>, state: any) => {
 	const { children } = path.node;
@@ -37,23 +29,10 @@ export const handleDecodeElement: Handler = (path: NodePath<JSXElement>, state: 
 
 	let decoded;
 
-	switch (type) {
-		case Encoding.Base64: {
-			decoded = atob(value);
-			break;
-		}
-		case Encoding.Uri: {
-			decoded = decodeURI(value);
-			break;
-		}
-		case Encoding.UriComponent: {
-			decoded = decodeURIComponent(value);
-			break;
-		}
-		default: {
-			path.replaceWith(child);
-			return;
-		}
+	try {
+		decoded = decode(type, value);
+	} catch (err) {
+		throw new InvalidEncodingType(type, path, err);
 	}
 
 	if (isExpr) {

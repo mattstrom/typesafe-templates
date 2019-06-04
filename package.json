@@ -10,12 +10,14 @@
     "main": "dist/app/index.js",
     "typings": "dist/app/index.d.ts",
     "scripts": {
-        "prebuild": "rimraf dist dist-tests",
+        "clean": "rimraf dist dist-tests",
+        "prebuild": "npm run clean",
         "prebuild:tests": "npm run prebuild",
         "build": "tsc --build src/app",
         "build:tests": "tsc --build src/tests",
         "test": "jest",
         "prepublishOnly": "npm run build",
+        "prepack": "npm run build",
         "commit": "git-cz",
         "release": "semantic-release --no-ci",
         "release:dry-run": "semantic-release --no-ci --dry-run"
@@ -55,35 +57,40 @@
         "@babel/preset-typescript": "^7.1.0",
         "@babel/traverse": "^7.1.4",
         "@babel/types": "^7.1.3",
-        "atob": "^2.1.2",
         "babel-literal-to-ast": "^2.1.0",
-        "btoa": "^1.2.1"
+        "outdent": "^0.7.0"
+    },
+    "peerDependencies": {
+        "ejs": "^2.6.1"
     },
     "devDependencies": {
-        "@commitlint/cli": "^7.5.2",
-        "@commitlint/config-conventional": "^7.5.0",
+        "@commitlint/cli": "^8.0.0",
+        "@commitlint/config-conventional": "^8.0.0",
         "@semantic-release/changelog": "^3.0.2",
         "@semantic-release/commit-analyzer": "^6.1.0",
         "@semantic-release/git": "^7.0.8",
         "@semantic-release/github": "^5.2.10",
         "@semantic-release/release-notes-generator": "^7.1.4",
-        "@types/atob": "^2.1.2",
         "@types/babel-types": "^7.0.4",
         "@types/babel__core": "^7.0.1",
         "@types/babel__generator": "^7.0.2",
         "@types/babel__parser": "^7.0.0",
         "@types/babel__traverse": "^7.0.0",
-        "@types/btoa": "^1.2.3",
+        "@types/ejs": "^2.6.3",
         "@types/jest": "^24.0.12",
         "@types/node": "10.14.8",
+        "@types/prettier": "^1.16.4",
         "commitizen": "^3.0.7",
         "cz-conventional-changelog": "^2.1.0",
+        "ejs": "^2.6.1",
         "husky": "^2.0.0",
         "jest": "^24.8.0",
+        "prettier": "^1.17.1",
         "rimraf": "^2.6.2",
         "semantic-release": "^15.13.13",
         "ts-jest": "^24.0.2",
+        "ts-node": "^8.1.0",
         "tslint": "^5.11.0",
-        "typescript": "^3.1.3"
+        "typescript": "^3.4.5"
     }
 }

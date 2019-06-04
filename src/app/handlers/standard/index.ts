@@ -1,6 +1,5 @@
-import { NodePath } from '@babel/traverse';
-import { JSXElement } from '@babel/types';
-
+import { TagName } from '../../tags';
+import { Handler } from '..';
 import { handleAnyElement } from './any';
 import { handleArrayElement } from './array';
 import { handleBooleanElement } from './boolean';
@@ -15,9 +14,7 @@ import { handleRepeatElement } from './repeat';
 import { handleStringElement } from './string';
 
 
-export type Handler = (path: NodePath<JSXElement>, state: any) => void;
-
-export const handlers = new Map<string, Handler>([
+export const handlers = new Map<TagName, Handler>([
 	['$any', handleAnyElement],
 	['$array', handleArrayElement],
 	['$boolean', handleBooleanElement],
@@ -31,3 +28,5 @@ export const handlers = new Map<string, Handler>([
 	['$repeat', handleRepeatElement],
 	['$string', handleStringElement]
 ]);
+
+export default handlers;
