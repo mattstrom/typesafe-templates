@@ -1,3 +1,16 @@
+# [1.2.0](https://github.com/mattstrom/typesafe-templates/compare/1.1.0...1.2.0) (2019-06-04)
+
+
+### Bug Fixes
+
+* delete ref to nonexistent dependency ([554c0d9](https://github.com/mattstrom/typesafe-templates/commit/554c0d9))
+* references to ts files across project boundaries ([df1f0fd](https://github.com/mattstrom/typesafe-templates/commit/df1f0fd))
+
+
+### Features
+
+* add support for ejs precompilation ([fa083ad](https://github.com/mattstrom/typesafe-templates/commit/fa083ad)), closes [#30](https://github.com/mattstrom/typesafe-templates/issues/30)
+
 # [1.1.0](https://github.com/mattstrom/typesafe-templates/compare/1.0.0...1.1.0) (2019-05-15)
 
 
