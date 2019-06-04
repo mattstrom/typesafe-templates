@@ -75,7 +75,7 @@
         "@types/babel__traverse": "^7.0.0",
         "@types/btoa": "^1.2.3",
         "@types/jest": "^24.0.12",
-        "@types/node": "10.14.6",
+        "@types/node": "10.14.8",
         "commitizen": "^3.0.7",
         "cz-conventional-changelog": "^2.1.0",
         "husky": "^2.0.0",
