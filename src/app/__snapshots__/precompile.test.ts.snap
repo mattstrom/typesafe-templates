@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`precompile() when data contain multiline strings should escape new lines as \\n 1`] = `
+"const str = '\\\\n					This is a multiline\\\\n					string.\\\\n				';
+
+"
+`;
+
 exports[`precompile() with EJS should output rendered EJS 1`] = `
 "/// <reference path=\\"./models.d.ts\\" />
 (function() {

@@ -52,4 +52,25 @@ describe('precompile()', () => {
 			expect(prettified).toMatchSnapshot();
 		});
 	});
+
+	describe('when data contain multiline strings', () => {
+		it('should escape new lines as \\n', async () => {
+			// Arrange
+			const template = 'const str = <$string value={$.str} />';
+			const data = {
+				str: `
+					This is a multiline
+					string.
+				`
+			};
+
+			const code = await precompile(template) || '';
+
+			// Act
+			const output = await render(code, { $: data });
+
+			// Assert
+			expect(output).toMatchSnapshot();
+		});
+	});
 });
