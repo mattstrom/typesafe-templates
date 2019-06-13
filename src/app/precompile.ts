@@ -3,7 +3,7 @@ import PresetTypescript from '@babel/preset-typescript';
 import PluginJsxSyntax from '@babel/plugin-syntax-jsx';
 import outdent from 'outdent';
 
-import { decode, encode } from './helpers';
+import { clean, decode, encode } from './helpers';
 import { TypesafeTemplateOptions, TypesafeTemplatePlugin } from './plugins';
 
 
@@ -55,7 +55,7 @@ export async function precompile(
 }
 
 function appendLib() {
-	const funcs = [decode, encode];
+	const funcs = [clean, decode, encode];
 	const lib = funcs.map(fn => `${fn}`).join('\n\n');
 
 	const demarcation = `<%# [typesafe-templates] EJS Library Functions %>`;

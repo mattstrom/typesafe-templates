@@ -1,3 +1,4 @@
+export * from './clean';
 export * from './decode';
 export * from './encode';
 export * from './evaluate-expression';
