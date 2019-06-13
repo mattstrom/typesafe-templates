@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/mattstrom/typesafe-templates/compare/1.2.0...1.2.1) (2019-06-13)
+
+
+### Bug Fixes
+
+* handle multiline strings in ejs precompilation ([ea0f7e6](https://github.com/mattstrom/typesafe-templates/commit/ea0f7e6)), closes [#35](https://github.com/mattstrom/typesafe-templates/issues/35)
+
 # [1.2.0](https://github.com/mattstrom/typesafe-templates/compare/1.1.0...1.2.0) (2019-06-04)
 
 
