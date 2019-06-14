@@ -1,11 +1,12 @@
+import generate from '@babel/generator';
 import { NodePath } from '@babel/traverse';
 import {
-	binaryExpression, conditionalExpression, identifier, isJSXElement,
-	JSXElement, nullLiteral
+	binaryExpression, conditionalExpression, Identifier, identifier, isJSXElement,
+	JSXElement, nullLiteral, stringLiteral
 } from '@babel/types';
 
 import { getRefValueForAttribute } from '../../helpers';
-import { Handler } from '..';
+import { Handler, visitorFactory } from '..';
 
 
 export const handleNullableElement: Handler = (path: NodePath<JSXElement>, state: any) => {
@@ -23,15 +24,39 @@ export const handleNullableElement: Handler = (path: NodePath<JSXElement>, state
 
 	const ref = getRefValueForAttribute(child, 'value');
 
-	const node = conditionalExpression(
+	const ternary = conditionalExpression(
 		binaryExpression('===', identifier(ref), identifier('undefined')),
-		identifier('undefined'),
+		stringLiteral('undefined'),
 		conditionalExpression(
 			binaryExpression('===', identifier(ref), nullLiteral()),
-			nullLiteral(),
+			stringLiteral('null'),
 			child.node
 		)
 	);
 
-	path.replaceWith(node);
+	path.replaceWith(ternary);
+	path.parentPath.traverse(visitorFactory());
+
+	path.traverse({
+		Identifier(innerPath: NodePath<Identifier>) {
+			const { node } = innerPath;
+
+			const regex = /^(?<quotes>['"]?)<%[=\-] (.*) %>\k<quotes>$/;
+			const matches = regex.exec(node.name);
+
+			if (matches) {
+				const newNode = (matches.groups!.quotes)
+					? identifier(`'\\\'' + ${matches[2]} + '\\\''`)
+					: identifier(`${matches[2]}`);
+
+				innerPath.replaceWith(newNode);
+			}
+		}
+	});
+
+	const { code } = generate(ternary);
+
+	path.replaceWith(
+		identifier(`<%- ${code} %>`)
+	);
 };

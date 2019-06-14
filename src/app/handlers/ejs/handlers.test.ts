@@ -50,20 +50,4 @@ describe('EJS handlers', () => {
 		`);
 		});
 	});
-
-	describe('$nullable', () => {
-		it('should render as expected', async () => {
-			// Arrange
-			const template = `
-				<$nullable><$string value={$.value} /></$nullable>
-			`;
-
-			// Act
-			const code = await precompile(template);
-
-			// Assert
-			expect(code).not.toBeNull();
-			expect(code).toMatch(`$.value === undefined ? undefined : $.value === null ? null : '<%- clean($.value) %>'`);
-		});
-	});
 });

@@ -4,6 +4,6 @@ export function clean(value: any): any {
 	}
 
 	return value
-		.replace(/'/g, "\\'") // tslint:disable-line:quotemark
+		.replace(/'/g, "\\'")
 		.replace(/\n/gm, '\\n');
 }
