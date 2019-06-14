@@ -1,5 +1,8 @@
 import { NodePath } from '@babel/traverse';
-import { identifier, isJSXElement, JSXElement } from '@babel/types';
+import {
+	binaryExpression, conditionalExpression, identifier, isJSXElement,
+	JSXElement, nullLiteral
+} from '@babel/types';
 
 import { getRefValueForAttribute } from '../../helpers';
 import { Handler } from '..';
@@ -20,8 +23,15 @@ export const handleNullableElement: Handler = (path: NodePath<JSXElement>, state
 
 	const ref = getRefValueForAttribute(child, 'value');
 
-	path.insertBefore(identifier(`(${ref} === undefined) ? undefined : (${ref} === null) ? null : `));
-	path.insertBefore(child.node);
+	const node = conditionalExpression(
+		binaryExpression('===', identifier(ref), identifier('undefined')),
+		identifier('undefined'),
+		conditionalExpression(
+			binaryExpression('===', identifier(ref), nullLiteral()),
+			nullLiteral(),
+			child.node
+		)
+	);
 
-	path.remove();
+	path.replaceWith(node);
 };
