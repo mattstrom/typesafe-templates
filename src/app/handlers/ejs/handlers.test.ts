@@ -63,7 +63,7 @@ describe('EJS handlers', () => {
 
 			// Assert
 			expect(code).not.toBeNull();
-			expect(code).toMatch(`($.value === undefined) ? undefined : ($.value === null) ? null : \n'<%- clean($.value) %>'`);
+			expect(code).toMatch(`$.value === undefined ? undefined : $.value === null ? null : '<%- clean($.value) %>'`);
 		});
 	});
 });
