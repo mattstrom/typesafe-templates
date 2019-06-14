@@ -20,7 +20,7 @@ export const handleNullableElement: Handler = (path: NodePath<JSXElement>, state
 
 	const ref = getRefValueForAttribute(child, 'value');
 
-	path.insertBefore(identifier(`(${ref} === undefined || ${ref} === null) ? <%= ${ref} %> : `));
+	path.insertBefore(identifier(`(${ref} === undefined) ? undefined : (${ref} === null) ? null : `));
 	path.insertBefore(child.node);
 
 	path.remove();
