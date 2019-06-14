@@ -41,11 +41,12 @@ export const handleNullableElement: Handler = (path: NodePath<JSXElement>, state
 		Identifier(innerPath: NodePath<Identifier>) {
 			const { node } = innerPath;
 
-			const regex = /^(?<quotes>['"]?)<%[=\-] (.*) %>\k<quotes>$/;
+			const regex = /^(['"]?)<%[=\-] (.*) %>\1$/;
 			const matches = regex.exec(node.name);
 
 			if (matches) {
-				const newNode = (matches.groups!.quotes)
+				const isString = matches[1];
+				const newNode = (isString)
 					? identifier(`'\\\'' + ${matches[2]} + '\\\''`)
 					: identifier(`${matches[2]}`);
 
