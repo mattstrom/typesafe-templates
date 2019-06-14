@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/mattstrom/typesafe-templates/compare/1.2.1...1.2.2) (2019-06-14)
+
+
+### Bug Fixes
+
+* handle non-string values in clean() ([7c4d79e](https://github.com/mattstrom/typesafe-templates/commit/7c4d79e)), closes [#37](https://github.com/mattstrom/typesafe-templates/issues/37)
+
 ## [1.2.1](https://github.com/mattstrom/typesafe-templates/compare/1.2.0...1.2.1) (2019-06-13)
 
 
