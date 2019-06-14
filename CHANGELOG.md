@@ -1,3 +1,10 @@
+## [1.2.6](https://github.com/mattstrom/typesafe-templates/compare/1.2.5...1.2.6) (2019-06-14)
+
+
+### Bug Fixes
+
+* remove use of named capture groups ([7493a15](https://github.com/mattstrom/typesafe-templates/commit/7493a15)), closes [#39](https://github.com/mattstrom/typesafe-templates/issues/39)
+
 ## [1.2.5](https://github.com/mattstrom/typesafe-templates/compare/1.2.4...1.2.5) (2019-06-14)
 
 
