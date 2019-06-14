@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/mattstrom/typesafe-templates/compare/1.2.3...1.2.4) (2019-06-14)
+
+
+### Bug Fixes
+
+* correct ejs output of $nullable tag ([df35c0b](https://github.com/mattstrom/typesafe-templates/commit/df35c0b)), closes [#39](https://github.com/mattstrom/typesafe-templates/issues/39)
+
 ## [1.2.3](https://github.com/mattstrom/typesafe-templates/compare/1.2.2...1.2.3) (2019-06-14)
 
 
