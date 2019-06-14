@@ -1,7 +1,9 @@
-// tslint:disable:quotemark
+export function clean(value: any): any {
+	if (typeof value !== 'string') {
+		return value;
+	}
 
-export function clean(value: string) {
 	return value
-		.replace(/'/g, "\\'")
+		.replace(/'/g, "\\'") // tslint:disable-line:quotemark
 		.replace(/\n/gm, '\\n');
 }
