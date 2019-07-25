@@ -1,3 +1,10 @@
+## [1.2.7](https://github.com/mattstrom/typesafe-templates/compare/1.2.6...1.2.7) (2019-07-25)
+
+
+### Bug Fixes
+
+* .snyk, package.json & package-lock.json to reduce vulnerabilities ([7317330](https://github.com/mattstrom/typesafe-templates/commit/7317330))
+
 ## [1.2.6](https://github.com/mattstrom/typesafe-templates/compare/1.2.5...1.2.6) (2019-06-14)
 
 
