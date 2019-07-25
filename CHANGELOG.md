@@ -1,3 +1,10 @@
+## [1.2.9](https://github.com/mattstrom/typesafe-templates/compare/1.2.8...1.2.9) (2019-07-25)
+
+
+### Bug Fixes
+
+* bump version after deps fixes ([48913b0](https://github.com/mattstrom/typesafe-templates/commit/48913b0))
+
 ## [1.2.8](https://github.com/mattstrom/typesafe-templates/compare/1.2.7...1.2.8) (2019-07-25)
 
 
