@@ -5,5 +5,6 @@ export function clean(value: any): any {
 
 	return value
 		.replace(/'/g, "\\'")
+		.replace(/\\/g, "\\\\\\")
 		.replace(/\n/gm, '\\n');
 }

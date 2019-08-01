@@ -1,6 +1,6 @@
 import { clean } from './clean';
 
-describe('clean()', () => {
+fdescribe('clean()', () => {
 	it('should replace single quote marks with escaped quote marks', () => {
 		// Arrange
 		const str = `He said 'Hello'.`;
@@ -11,6 +11,18 @@ describe('clean()', () => {
 		// Assert
 		expect(cleaned).toEqual(`He said \\'Hello\\'.`);
 	});
+
+	it('should replace backslashes with escaped backslashes', () => {
+		// Arrange
+		const str = `He said \"Hello\".`;
+
+		// Act
+		const cleaned = clean(str);
+
+		// Assert
+		expect(cleaned).toEqual(`He said \"Hello\".`);
+	});
+
 	it('should replace new lines with escaped new lines', () => {
 		// Arrange
 		const str = `
