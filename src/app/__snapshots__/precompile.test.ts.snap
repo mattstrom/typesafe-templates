@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`precompile() when data contain multiline strings should escape new lines as \\n 1`] = `
-"const str = '\\\\n					This is a multiline\\\\n					string.\\\\n				';
+"const str = \\"\\\\n\\\\t\\\\t\\\\t\\\\t\\\\tThis is a multiline\\\\n\\\\t\\\\t\\\\t\\\\t\\\\tstring.\\\\n\\\\t\\\\t\\\\t\\\\t\\";
 
 "
 `;
