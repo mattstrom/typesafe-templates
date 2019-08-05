@@ -14,7 +14,7 @@ describe('$nullable', () => {
 
 		// Assert
 		expect(code).not.toBeNull();
-		expect(code).toMatch(`<%- $.value === undefined ? "undefined" : $.value === null ? "null" : '\\\'' + clean($.value) + '\\\'' %>;`);
+		expect(code).toMatch(`<%- $.value === undefined ? "undefined" : $.value === null ? "null" : JSON.stringify($.value) %>;`);
 	});
 
 	describe('when wrapping <$string>', function() {
@@ -35,7 +35,7 @@ describe('$nullable', () => {
 
 			// Assert
 			expect(rendered).not.toBeNull();
-			expect(rendered).toMatch(`fn('string')`);
+			expect(rendered).toMatch(`fn("string")`);
 		});
 
 		it('should render as expected when value is undefined', async () => {

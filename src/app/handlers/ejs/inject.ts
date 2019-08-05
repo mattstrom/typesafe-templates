@@ -31,6 +31,6 @@ export function handleStringElement(path: NodePath<JSXElement>, state: any) {
 	const ref = getRefValueForAttribute(path, 'value');
 
 	path.replaceWith(
-		identifier(`'<%- clean(${ref}) %>'`)
+		identifier(`<%- JSON.stringify(${ref}) %>`)
 	);
 }
