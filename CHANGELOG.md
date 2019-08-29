@@ -1,3 +1,10 @@
+## [1.2.10](https://github.com/mattstrom/typesafe-templates/compare/1.2.9...1.2.10) (2019-08-29)
+
+
+### Bug Fixes
+
+* use JSON stringify to escape string ([11aea30](https://github.com/mattstrom/typesafe-templates/commit/11aea30))
+
 ## [1.2.9](https://github.com/mattstrom/typesafe-templates/compare/1.2.8...1.2.9) (2019-07-25)
 
 
