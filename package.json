@@ -86,7 +86,7 @@
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.0.2",
     "ejs": "^2.6.1",
-    "husky": "^3.0.1",
+    "husky": "^4.0.0",
     "jest": "^24.8.0",
     "prettier": "^1.17.1",
     "rimraf": "^2.6.2",
