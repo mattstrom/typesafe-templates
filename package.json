@@ -64,7 +64,7 @@
     "snyk": "^1.279.1"
   },
   "peerDependencies": {
-    "ejs": "^2.6.1"
+    "ejs": "^3.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
