@@ -8,10 +8,10 @@ exports[`precompile() when data contain multiline strings should escape new line
 
 exports[`precompile() with EJS should output rendered EJS 1`] = `
 "/// <reference path=\\"./models.d.ts\\" />
-(function() {
+(function () {
   scheduler.plan(
     () => time.getHour() >= 9 && time.getHour() <= 17,
-    schedule => {
+    (schedule) => {
       schedule.reserve(\\"100\\", 200);
       schedule.assign(\\"201\\", \\"Allison\\");
       schedule.assign(\\"202\\", \\"Bob\\");
@@ -19,7 +19,7 @@ exports[`precompile() with EJS should output rendered EJS 1`] = `
   );
   scheduler.plan(
     () => time.getHour() >= 7 && time.getHour() <= 23,
-    schedule => {
+    (schedule) => {
       schedule.reserve(\\"1\\", 75);
       schedule.assign(\\"2\\", \\"Charlie\\");
       schedule.assign(\\"3\\", \\"Denise\\");
