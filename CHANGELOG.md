@@ -1,3 +1,10 @@
+## [1.2.11](https://github.com/mattstrom/typesafe-templates/compare/1.2.10...1.2.11) (2021-04-05)
+
+
+### Bug Fixes
+
+* update dependencies ([b475f8c](https://github.com/mattstrom/typesafe-templates/commit/b475f8c4e612693977e0736fa5949a70b0fa955c))
+
 ## [1.2.10](https://github.com/mattstrom/typesafe-templates/compare/1.2.9...1.2.10) (2019-08-29)
 
 
