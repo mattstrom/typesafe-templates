@@ -16,7 +16,7 @@ export function handleExprElement(node: NodePath<JSXElement>, state: any) {
 	try {
 		const result = parse(value);
 		node.replaceWith(result.program.body[0]);
-	} catch (e) {
+	} catch (e: any) {
 		throw new InvalidExpression(value.toString(), node, e);
 	}
 }
