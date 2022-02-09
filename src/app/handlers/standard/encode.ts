@@ -30,7 +30,7 @@ export const handleEncodeElement: Handler = (path: NodePath<JSXElement>, state: 
 
 	try {
 		encoded = encode(type, `${value}`);
-	} catch (err) {
+	} catch (err: any) {
 		throw new InvalidEncodingType(type, path, err);
 	}
 

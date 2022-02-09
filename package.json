@@ -20,9 +20,7 @@
     "prepack": "npm run build",
     "commit": "git-cz",
     "release": "semantic-release --no-ci",
-    "release:dry-run": "semantic-release --no-ci --dry-run",
-    "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "release:dry-run": "semantic-release --no-ci --dry-run"
   },
   "config": {
     "commitizen": {
@@ -88,6 +86,7 @@
     "ejs": "^3.1.6",
     "husky": "^5.2.0",
     "jest": "^26.6.3",
+    "jest-cli": "^26.6.3",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
     "semantic-release": "^17.4.2",
