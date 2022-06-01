@@ -1,5 +1,6 @@
 import { render } from 'ejs';
 import * as fs from 'fs';
+import { outdent } from 'outdent';
 import * as prettier from 'prettier';
 import { promisify } from 'util';
 
@@ -72,5 +73,43 @@ describe('precompile()', () => {
 			// Assert
 			expect(output).toMatchSnapshot();
 		});
+	});
+
+	it('should remove comments when "comments" option is false', async () => {
+		// Arrange
+		const template = outdent`
+			// @ts-ignore
+			const str = <$string value={$.str} />;
+		`;
+		const data = {
+			str: 'Hello world'
+		};
+
+		const code = await precompile(template, { comments: false }) || '';
+
+		// Act
+		const output = await render(code, { $: data });
+
+		// Assert
+		expect(output).toMatchSnapshot();
+	});
+
+	it('should preserve comments when "comments" option is undefined', async () => {
+		// Arrange
+		const template = outdent`
+			// @ts-ignore
+			const str = <$string value={$.str} />;
+		`;
+		const data = {
+			str: 'Hello world'
+		};
+
+		const code = await precompile(template) || '';
+
+		// Act
+		const output = await render(code, { $: data });
+
+		// Assert
+		expect(output).toMatchSnapshot();
 	});
 });
