@@ -10,6 +10,7 @@ import { TypesafeTemplateOptions, TypesafeTemplatePlugin } from './plugins';
 export interface PrecompilerOptions {
 	plugins: babel.PluginObj<any>[];
 	precompile?: false | 'ejs' | 'standard';
+	comments?: boolean;
 }
 
 const defaultOptions: PrecompilerOptions = {
@@ -34,6 +35,7 @@ export async function precompile(
 	const result = await babel.transformAsync(template, {
 		ast: false,
 		filename: 'template.tsx', // Arbitrary filename. Used by Babel to discern syntax of `contents`.
+		comments: _options.comments,
 		presets: [
 			PresetTypescript
 		],
