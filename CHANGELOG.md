@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/mattstrom/typesafe-templates/compare/1.2.12...1.3.0) (2022-06-01)
+
+
+### Features
+
+* add option for preserving or removing comments ([0543edd](https://github.com/mattstrom/typesafe-templates/commit/0543edd5efc5d5dc85b989d24fb1c786956f11e3))
+
 ## [1.2.12](https://github.com/mattstrom/typesafe-templates/compare/1.2.11...1.2.12) (2022-06-01)
 
 
