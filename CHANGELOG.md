@@ -1,3 +1,10 @@
+## [1.2.12](https://github.com/mattstrom/typesafe-templates/compare/1.2.11...1.2.12) (2022-06-01)
+
+
+### Bug Fixes
+
+* add .nvmrc file ([50fef0b](https://github.com/mattstrom/typesafe-templates/commit/50fef0b53b96ae69134f122c36cb1c469522ce2b))
+
 ## [1.2.11](https://github.com/mattstrom/typesafe-templates/compare/1.2.10...1.2.11) (2021-04-05)
 
 
