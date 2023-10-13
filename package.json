@@ -78,7 +78,7 @@
     "@types/babel-types": "^7.0.4",
     "@types/ejs": "^3.0.6",
     "@types/jest": "^26.0.22",
-    "@types/node": "^16.11.38",
+    "@types/node": "^18.0.0",
     "@types/prettier": "^2.2.3",
     "commitizen": "^4.2.3",
     "cz-conventional-changelog": "^3.3.0",
